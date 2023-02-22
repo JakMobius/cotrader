@@ -1,0 +1,214 @@
+model:
+  _target_: cotrader.models.transformer.Transformer
+  sequence_length: 128
+  learning_rate: 0.001
+  hidden_dim: 64
+  num_encoder_layers: 4
+  n_head: 2
+  dropout: 0.15
+  feedforward_dim: 128
+data:
+  sources:
+  - symbol: ETHUSDT
+    interval: 5m
+    upper_date: '2025-05-31 00:00:00'
+  - symbol: BTCUSDT
+    interval: 5m
+    upper_date: '2025-05-31 00:00:00'
+  - symbol: SOLUSDT
+    interval: 5m
+    upper_date: '2025-05-31 00:00:00'
+  - symbol: XRPUSDT
+    interval: 5m
+    upper_date: '2025-05-31 00:00:00'
+  - symbol: LTCUSDT
+    interval: 5m
+    upper_date: '2025-05-31 00:00:00'
+  sequence_length: ${model.sequence_length}
+  batch_size: 1024
+  indicators:
+  - ema10
+  - ema50
+  - ema100
+  - sma10
+  - sma50
+  - sma100
+  - volume100
+  input_features:
+  - type: softplus_ratio
+    num:
+    - open
+    - 0
+    den:
+    - open
+    - -1
+    factor: 200
+    name: rel(open)
+  - type: softplus_ratio
+    num:
+    - high
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    name: rel(high)
+  - type: softplus_ratio
+    num:
+    - low
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    name: rel(low)
+  - type: log_ratio
+    num:
+    - volume
+    - 0
+    den:
+    - volume
+    - -1
+    name: log(volume)
+  - type: log10fourier
+    value:
+    - open
+    - 0
+    name: abs(open)
+  - type: log10fourier
+    value:
+    - volume
+    - 0
+    name: abs(volume)
+  - type: log10fourier
+    value:
+    - volume100
+    - 0
+    name: abs(volume100)
+  - type: softplus_ratio
+    num:
+    - ema10
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    name: rel(ema10)
+  - type: softplus_ratio
+    num:
+    - ema50
+    - 0
+    den:
+    - open
+    - 0
+    factor: 100
+    name: rel(ema50)
+  - type: softplus_ratio
+    num:
+    - ema100
+    - 0
+    den:
+    - open
+    - 0
+    factor: 50
+    name: rel(ema100)
+  output_features:
+  - type: softplus_ratio
+    num:
+    - close
+    - 0
+    den:
+    - close
+    - -1
+    factor: 200
+    target: predicted_close
+    name: rel(close)
+  - type: log_ratio
+    num:
+    - volume
+    - 0
+    den:
+    - volume100
+    - -1
+    target: predicted_volume
+    name: log(volume)
+  - type: softplus_ratio
+    num:
+    - high
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    target: predicted_high
+    name: rel(high)
+  - type: softplus_ratio
+    num:
+    - low
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    target: predicted_low
+    name: rel(low)
+  prediction:
+  - type: value
+    value:
+    - close
+    - -1
+    target: open
+  - type: inv_log_ratio
+    ratio:
+    - predicted_volume
+    - 0
+    den:
+    - volume100
+    - -1
+    target: volume
+  - type: inv_softplus_ratio
+    ratio:
+    - predicted_close
+    - 0
+    den:
+    - close
+    - -1
+    factor: 200
+    target: close
+  - type: inv_softplus_ratio
+    ratio:
+    - predicted_high
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    target: high
+  - type: inv_softplus_ratio
+    ratio:
+    - predicted_low
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    target: low
+training:
+  epochs: 15
+  early_stopping_patience: -1
+  save_top_k: 3
+  load_checkpoint: false
+  dataloader_workers: 8
+validation:
+  suppress_output: false
+  available_candles: 450000
+  train_size: 10000
+  validation_size: 1000
+  seed: 42
+  steps: 100
+  nproc: 1
+device: cuda
+output:
+  dir: transformer-hd${model.hidden_dim}-hl${model.num_encoder_layers}-sl${model.sequence_length}
+  tensorboard_dir: plots/validation/${output.dir}
+  name: ''

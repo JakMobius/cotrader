@@ -1,0 +1,58 @@
+defaults:
+  - _self_
+  - sections/features
+  - sections/training
+  - models/default
+
+device: cpu
+
+constants:
+  train_candles: 400000
+  validation_candles: 50000
+
+experiment_prefix: ""
+
+output:
+  name: ${experiment_prefix}${constants.model_codename}
+  model_file: models/${output.name}
+  tensorboard:
+    enabled: true
+    dir: plots/train
+  mlflow:
+    enabled: true
+    experiment_name: ${output.model_file}
+    tracking_uri: http://127.0.0.1:8080
+
+data:
+  batch_size: 1024
+
+  sources:
+  - symbol: ETHUSDT
+    interval: 5m
+    train_candles: ${constants.train_candles}
+    validation_candles: ${constants.validation_candles}
+    training_end_time: 2025-05-31 00:00:00
+
+  - symbol: BTCUSDT
+    interval: 5m
+    train_candles: ${constants.train_candles}
+    validation_candles: ${constants.validation_candles}
+    training_end_time: 2025-05-31 00:00:00
+
+  - symbol: SOLUSDT
+    interval: 5m
+    train_candles: ${constants.train_candles}
+    validation_candles: ${constants.validation_candles}
+    training_end_time: 2025-05-31 00:00:00
+
+  - symbol: XRPUSDT
+    interval: 5m
+    train_candles: ${constants.train_candles}
+    validation_candles: ${constants.validation_candles}
+    training_end_time: 2025-05-31 00:00:00
+
+  - symbol: LTCUSDT
+    interval: 5m
+    train_candles: ${constants.train_candles}
+    validation_candles: ${constants.validation_candles}
+    training_end_time: 2025-05-31 00:00:00

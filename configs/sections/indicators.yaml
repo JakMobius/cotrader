@@ -1,0 +1,76 @@
+# Library of pre-configured indicators
+ema10:
+  _target_: cotrader.datasource.candles.indicators_datasource.EMAIndicator
+  period: 10
+
+ema20:
+  _target_: cotrader.datasource.candles.indicators_datasource.EMAIndicator
+  period: 20
+
+ema50:
+  _target_: cotrader.datasource.candles.indicators_datasource.EMAIndicator
+  period: 50
+
+ema100:
+  _target_: cotrader.datasource.candles.indicators_datasource.EMAIndicator
+  period: 100
+
+ema200:
+  _target_: cotrader.datasource.candles.indicators_datasource.EMAIndicator
+  period: 200
+
+sma10:
+  _target_: cotrader.datasource.candles.indicators_datasource.SMAIndicator
+  period: 10
+
+sma20:
+  _target_: cotrader.datasource.candles.indicators_datasource.SMAIndicator
+  period: 20
+
+sma50:
+  _target_: cotrader.datasource.candles.indicators_datasource.SMAIndicator
+  period: 50
+
+sma100:
+  _target_: cotrader.datasource.candles.indicators_datasource.SMAIndicator
+  period: 100
+
+sma200:
+  _target_: cotrader.datasource.candles.indicators_datasource.SMAIndicator
+  period: 200
+
+abs_open:
+  _target_: cotrader.datasource.candles.indicators_datasource.AbsoluteValueIndicator
+  property: open
+
+abs_high:
+  _target_: cotrader.datasource.candles.indicators_datasource.AbsoluteValueIndicator
+  property: high
+
+abs_low:
+  _target_: cotrader.datasource.candles.indicators_datasource.AbsoluteValueIndicator
+  property: low
+
+abs_close:
+  _target_: cotrader.datasource.candles.indicators_datasource.AbsoluteValueIndicator
+  property: close
+
+abs_volume:
+  _target_: cotrader.datasource.candles.indicators_datasource.AbsoluteValueIndicator
+  property: volume
+
+volume10:
+  _target_: cotrader.datasource.candles.indicators_datasource.AverageVolume
+  period: 10
+
+volume20:
+  _target_: cotrader.datasource.candles.indicators_datasource.AverageVolume
+  period: 20
+
+volume50:
+  _target_: cotrader.datasource.candles.indicators_datasource.AverageVolume
+  period: 50
+
+volume100:
+  _target_: cotrader.datasource.candles.indicators_datasource.AverageVolume
+  period: 100

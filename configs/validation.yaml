@@ -1,0 +1,68 @@
+defaults:
+  - _self_
+  - sections/features
+  - sections/validation_training_multicpu
+  - models/default
+
+device: cpu
+
+constants:
+  train_candles: 10000
+  validation_candles: 1000
+  # train_candles: 400000
+  # validation_candles: 50000
+  interval: '5m'
+  upper_date: '2025-05-31 00:00:00'
+
+validation:
+  suppress_output: true
+  available_candles: 450000
+  train_size: 20000
+  validation_size: 2000
+  steps: 50
+
+data:
+  batch_size: 1024
+
+  sources:
+  - symbol: ETHUSDT
+    interval: ${constants.interval}
+    upper_date: ${constants.upper_date}
+  - symbol: BTCUSDT
+    interval: ${constants.interval}
+    upper_date: ${constants.upper_date}
+  - symbol: SOLUSDT
+    interval: ${constants.interval}
+    upper_date: ${constants.upper_date}
+  - symbol: XRPUSDT
+    interval: ${constants.interval}
+    upper_date: ${constants.upper_date}
+  - symbol: LTCUSDT
+    interval: ${constants.interval}
+    upper_date: ${constants.upper_date}
+
+output:
+  experiment_id: 1
+  experiment_name: ${constants.model_codename}-${output.experiment_id}
+  experiment_dir: plots/validation/${output.experiment_name}
+  tensorboard:
+    enabled: true
+  mlflow:
+    enabled: true
+    tracking_uri: http://127.0.0.1:8080
+  name: ''
+  histograms:
+  - file: "loss_hist.png"
+    metrics:
+      - train_loss
+      - val_loss
+    name: "Loss distribution"
+    xlabel: "Loss"
+    ylabel: "Frequency"
+  - file: "profit.png"
+    metrics:
+      - train_annual_profit
+      - validation_annual_profit
+    name: "Annual profit distribution"
+    xlabel: "Profit"
+    ylabel: "Frequency"

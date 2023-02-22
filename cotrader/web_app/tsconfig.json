@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "src/*": ["src/*"]
+        },
+        "lib": [
+            "ES2021",
+            "dom"
+        ],
+        "target": "ES2020",
+        "module": "ES2020",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "moduleResolution": "node",
+        "jsx": "react",
+        "sourceMap": true,
+        "outDir": "dist",
+        "strict": true,
+        "skipLibCheck": true,
+        "allowJs": true,
+        "declaration": false,
+        "experimentalDecorators": true
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

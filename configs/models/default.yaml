@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - baseline_mean
+  - _self_
+
+constants:
+  model_codename: default
+
+training:
+  epochs: 8

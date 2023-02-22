@@ -1,0 +1,15 @@
+# @package _global_
+model:
+  _target_: cotrader.models.transformer.Transformer
+  sequence_length: 128
+  learning_rate: 0.001
+  hidden_dim: 64
+  feedforward_dim: 512
+  n_head: 4
+  num_encoder_layers: 6
+  dropout: 0.15
+  warmup_steps: 5
+  cosine_annealing_steps: 10
+
+constants:
+  model_codename: transformer_hd${model.hidden_dim}_nel${model.num_encoder_layers}_hd${model.hidden_dim}_ffd${model.feedforward_dim}_nh${model.n_head}_sl${model.sequence_length}

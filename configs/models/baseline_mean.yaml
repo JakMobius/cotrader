@@ -1,0 +1,11 @@
+# @package _global_
+model:
+  _target_: cotrader.models.baseline_zero.BaselineZeroModel
+  sequence_length: 1
+
+constants:
+  model_codename: baseline_mean
+
+training:
+  gradient_clip_val: null
+  epochs: 1

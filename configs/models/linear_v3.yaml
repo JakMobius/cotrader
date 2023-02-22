@@ -1,0 +1,11 @@
+# @package _global_
+model:
+  _target_: cotrader.models.linear_v3.LinearV3
+  sequence_length: 64
+  learning_rate: 0.001
+  hidden_dim: 16
+  hidden_layers: 2
+  dropout: 0.15
+
+constants:
+  model_codename: linear_v3_hd${model.hidden_dim}_hl${model.hidden_layers}_sl${model.sequence_length}

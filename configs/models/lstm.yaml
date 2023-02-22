@@ -1,0 +1,11 @@
+# @package _global_
+model:
+  _target_: cotrader.models.lstm.LightningLSTMModel
+  sequence_length: 64
+  learning_rate: 0.001
+  hidden_dim: 64
+  hidden_layers: 4
+  dropout: 0.2
+
+constants:
+  model_codename: lstm_hd${model.hidden_dim}_hl${model.hidden_layers}_sl${128}

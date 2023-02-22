@@ -1,0 +1,184 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.chart-header {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: space-between;
+    align-self: stretch;
+    align-items: flex-start;
+    padding: 15px;
+}
+
+.symbol-container {
+    max-width: 181px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 36px;
+    text-align: left;
+    font-family: "Helvetica", sans-serif;
+}
+
+.interval-container {
+    max-width: 353px;
+    margin-left: 10px;
+    color: rgba(39, 0, 197, 1);
+    font-size: 36px;
+    text-align: left;
+    font-family: "Helvetica", sans-serif;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    justify-content: center;
+    align-self: stretch;
+    align-items: center;
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+.prediction-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    justify-content: flex-start;
+    align-self: stretch;
+    align-items: flex-start;
+    margin-top: 10px;
+    padding: 13px 10px;
+}
+
+.prediction-header {
+    display: flex;
+    flex-direction: row;
+    max-width: 270px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 36px;
+    text-align: left;
+    font-family: "Helvetica", sans-serif;
+}
+
+.prediction-list {
+    display: flex;
+    flex-direction: row;
+    align-self: stretch;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.prediction {
+    font-family: "PT Mono", sans-serif;
+    position:relative;
+    width: 278px;
+    height: 170px;
+    border-color: rgba(120, 120, 120, 1);
+    border-width: 0 1px 0 0;
+    border-style: dashed;
+    flex: 0 0 auto;
+}
+
+.cost-title {
+    position: absolute;
+    left: 13px;
+    top: 18px;
+    height: 36px;
+    font-family: 'PT Mono', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+}
+
+.cost-subtitle {
+    left: 13px;
+    top: 65px;
+    position: absolute;
+    font-family: 'PT Mono', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.prediction-time {
+    font-size: 22px;
+    left: 13px;
+    bottom: 18px;
+    position:absolute;
+    height: 27px;
+}
+
+.neutral-text {
+    color: rgba(112, 111, 120, 1);
+}
+
+.black-text {
+    color: rgba(0, 0, 0, 1);
+}
+
+.green-text {
+    color: rgba(0, 130, 29, 1);
+}
+
+.red-text {
+    color: rgba(168, 0, 0, 1);
+}
+
+.blue-text {
+    color: rgba(39, 0, 197, 1);
+}
+
+.chart {
+    width: 100%;
+    height: 100%;
+}
+
+.message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-header {
+    font-size: 24px;
+    font-family: "PT Mono", sans-serif;
+    margin: 20px;
+}
+
+.message-text {
+    font-size: 16px;
+    font-family: "PT Mono", sans-serif;
+    color: #353;
+}
+
+.hidden {
+    display: none;
+}

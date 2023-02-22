@@ -1,0 +1,11 @@
+# @package _global_
+defaults:
+  - training
+  - _self_
+
+training:
+  epochs: 15
+
+validation:
+  seed: 42
+  nproc: 1

@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - validation_training
+  - _self_
+
+training:
+  dataloader_workers: 0
+
+validation:
+  nproc: 8

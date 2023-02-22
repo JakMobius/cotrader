@@ -1,0 +1,456 @@
+{
+    "progress": "50 / 50",
+    "weights": 0,
+    "metrics": {
+        "val_loss": {
+            "max_idx": 8,
+            "max": 2.8950657844543457,
+            "min_idx": 40,
+            "min": 0.32322269678115845,
+            "median": 0.5522621870040894,
+            "avg": 0.6954264044761658
+        },
+        "val_correct_rate": {
+            "max_idx": 37,
+            "max": 0.5135737657546997,
+            "min_idx": 13,
+            "min": 0.48126012086868286,
+            "median": 0.5010129809379578,
+            "avg": 0.49979332089424133
+        },
+        "val_annual_profit": {
+            "max_idx": 37,
+            "max": 1.1109139919281006,
+            "min_idx": 13,
+            "min": 0.9444671273231506,
+            "median": 1.0005102157592773,
+            "avg": 1.0009737014770508
+        },
+        "train_loss": {
+            "max_idx": 32,
+            "max": 3.39512038230896,
+            "min_idx": 6,
+            "min": 0.42750823497772217,
+            "median": 0.712904155254364,
+            "avg": 0.8731945753097534
+        },
+        "train_correct_rate": {
+            "max_idx": 35,
+            "max": 0.5161105990409851,
+            "min_idx": 42,
+            "min": 0.49951937794685364,
+            "median": 0.5080803632736206,
+            "avg": 0.5077897906303406
+        },
+        "train_annual_profit": {
+            "max_idx": 37,
+            "max": 1.0674948692321777,
+            "min_idx": 10,
+            "min": 0.9719738364219666,
+            "median": 1.007571816444397,
+            "avg": 1.0068316459655762
+        }
+    },
+    "log": {
+        "1": {
+            "val_loss": 0.47838011384010315,
+            "val_correct_rate": 0.5121555924415588,
+            "val_annual_profit": 1.068450927734375,
+            "train_loss": 0.9845027327537537,
+            "train_correct_rate": 0.5126662254333496,
+            "train_annual_profit": 1.0131890773773193
+        },
+        "3": {
+            "val_loss": 0.5124102234840393,
+            "val_correct_rate": 0.49412479996681213,
+            "val_annual_profit": 0.9923076033592224,
+            "train_loss": 0.6300765872001648,
+            "train_correct_rate": 0.5022328495979309,
+            "train_annual_profit": 0.9889983534812927
+        },
+        "2": {
+            "val_loss": 0.41829970479011536,
+            "val_correct_rate": 0.5023298263549805,
+            "val_annual_profit": 1.012325406074524,
+            "train_loss": 0.7246869206428528,
+            "train_correct_rate": 0.5067386031150818,
+            "train_annual_profit": 1.0102922916412354
+        },
+        "7": {
+            "val_loss": 0.3417854607105255,
+            "val_correct_rate": 0.5010129809379578,
+            "val_annual_profit": 1.0241824388504028,
+            "train_loss": 1.0008392333984375,
+            "train_correct_rate": 0.5067586302757263,
+            "train_annual_profit": 1.0225446224212646
+        },
+        "5": {
+            "val_loss": 0.5325059294700623,
+            "val_correct_rate": 0.5055713057518005,
+            "val_annual_profit": 1.0011807680130005,
+            "train_loss": 0.6850085854530334,
+            "train_correct_rate": 0.5115748047828674,
+            "train_annual_profit": 0.9892040491104126
+        },
+        "4": {
+            "val_loss": 1.1724727153778076,
+            "val_correct_rate": 0.5081037282943726,
+            "val_annual_profit": 1.0498087406158447,
+            "train_loss": 0.877453625202179,
+            "train_correct_rate": 0.5089314579963684,
+            "train_annual_profit": 1.033705711364746
+        },
+        "6": {
+            "val_loss": 1.5747846364974976,
+            "val_correct_rate": 0.49574553966522217,
+            "val_annual_profit": 1.0005102157592773,
+            "train_loss": 0.42750823497772217,
+            "train_correct_rate": 0.5056772828102112,
+            "train_annual_profit": 0.9854810237884521
+        },
+        "0": {
+            "val_loss": 0.9542494416236877,
+            "val_correct_rate": 0.4981766641139984,
+            "val_annual_profit": 0.9799240827560425,
+            "train_loss": 0.9023469686508179,
+            "train_correct_rate": 0.5067986845970154,
+            "train_annual_profit": 1.0287741422653198
+        },
+        "9": {
+            "val_loss": 2.8950657844543457,
+            "val_correct_rate": 0.49452999234199524,
+            "val_annual_profit": 0.9670297503471375,
+            "train_loss": 1.6434365510940552,
+            "train_correct_rate": 0.5022428631782532,
+            "train_annual_profit": 0.9745071530342102
+        },
+        "10": {
+            "val_loss": 0.49111801385879517,
+            "val_correct_rate": 0.501823365688324,
+            "val_annual_profit": 1.0172009468078613,
+            "train_loss": 0.6295453310012817,
+            "train_correct_rate": 0.513907790184021,
+            "train_annual_profit": 1.011432409286499
+        },
+        "11": {
+            "val_loss": 1.1914207935333252,
+            "val_correct_rate": 0.4934157133102417,
+            "val_annual_profit": 0.970585823059082,
+            "train_loss": 0.840035617351532,
+            "train_correct_rate": 0.5028736591339111,
+            "train_annual_profit": 0.9719738364219666
+        },
+        "13": {
+            "val_loss": 0.49090898036956787,
+            "val_correct_rate": 0.49929091334342957,
+            "val_annual_profit": 0.9942386746406555,
+            "train_loss": 0.6943926215171814,
+            "train_correct_rate": 0.5057774186134338,
+            "train_annual_profit": 0.9985414743423462
+        },
+        "8": {
+            "val_loss": 0.5183477997779846,
+            "val_correct_rate": 0.5022284984588623,
+            "val_annual_profit": 0.9757581353187561,
+            "train_loss": 0.6722370982170105,
+            "train_correct_rate": 0.5124459266662598,
+            "train_annual_profit": 1.007571816444397
+        },
+        "14": {
+            "val_loss": 0.7286750674247742,
+            "val_correct_rate": 0.48126012086868286,
+            "val_annual_profit": 0.9444671273231506,
+            "train_loss": 0.7792985439300537,
+            "train_correct_rate": 0.49992990493774414,
+            "train_annual_profit": 0.9940178394317627
+        },
+        "15": {
+            "val_loss": 0.5007696151733398,
+            "val_correct_rate": 0.5010129809379578,
+            "val_annual_profit": 0.9992072582244873,
+            "train_loss": 0.712904155254364,
+            "train_correct_rate": 0.5021927952766418,
+            "train_annual_profit": 0.9979560375213623
+        },
+        "12": {
+            "val_loss": 0.6790462136268616,
+            "val_correct_rate": 0.5027350187301636,
+            "val_annual_profit": 1.0361437797546387,
+            "train_loss": 0.8498675227165222,
+            "train_correct_rate": 0.5048462152481079,
+            "train_annual_profit": 1.0140703916549683
+        },
+        "17": {
+            "val_loss": 0.5203242301940918,
+            "val_correct_rate": 0.4965559244155884,
+            "val_annual_profit": 0.9903177618980408,
+            "train_loss": 0.6266850829124451,
+            "train_correct_rate": 0.502312958240509,
+            "train_annual_profit": 0.9895302057266235
+        },
+        "18": {
+            "val_loss": 0.5371607542037964,
+            "val_correct_rate": 0.5061790943145752,
+            "val_annual_profit": 1.0013638734817505,
+            "train_loss": 0.6862422823905945,
+            "train_correct_rate": 0.5113145112991333,
+            "train_annual_profit": 0.9876512885093689
+        },
+        "16": {
+            "val_loss": 0.8397860527038574,
+            "val_correct_rate": 0.4989870488643646,
+            "val_annual_profit": 0.9885976314544678,
+            "train_loss": 0.9321829676628113,
+            "train_correct_rate": 0.5067386031150818,
+            "train_annual_profit": 1.0286834239959717
+        },
+        "20": {
+            "val_loss": 0.5597754716873169,
+            "val_correct_rate": 0.4818679094314575,
+            "val_annual_profit": 0.9515420198440552,
+            "train_loss": 0.8007281422615051,
+            "train_correct_rate": 0.5002202987670898,
+            "train_annual_profit": 0.9986012578010559
+        },
+        "22": {
+            "val_loss": 0.6997822523117065,
+            "val_correct_rate": 0.5037479996681213,
+            "val_annual_profit": 0.9986056685447693,
+            "train_loss": 0.860694944858551,
+            "train_correct_rate": 0.5072292685508728,
+            "train_annual_profit": 1.0289134979248047
+        },
+        "21": {
+            "val_loss": 0.479825496673584,
+            "val_correct_rate": 0.5027350187301636,
+            "val_annual_profit": 0.9921504259109497,
+            "train_loss": 0.5684369802474976,
+            "train_correct_rate": 0.5093519687652588,
+            "train_annual_profit": 1.0002624988555908
+        },
+        "19": {
+            "val_loss": 0.5785483121871948,
+            "val_correct_rate": 0.49979740381240845,
+            "val_annual_profit": 1.0286606550216675,
+            "train_loss": 1.2888973951339722,
+            "train_correct_rate": 0.5153696537017822,
+            "train_annual_profit": 1.026522159576416
+        },
+        "23": {
+            "val_loss": 0.5583587288856506,
+            "val_correct_rate": 0.5087115168571472,
+            "val_annual_profit": 1.0698436498641968,
+            "train_loss": 1.0239388942718506,
+            "train_correct_rate": 0.513126790523529,
+            "train_annual_profit": 1.0206687450408936
+        },
+        "24": {
+            "val_loss": 0.4961837828159332,
+            "val_correct_rate": 0.5047609210014343,
+            "val_annual_profit": 1.003728985786438,
+            "train_loss": 0.6251156330108643,
+            "train_correct_rate": 0.5159504413604736,
+            "train_annual_profit": 1.015093445777893
+        },
+        "25": {
+            "val_loss": 0.6042081713676453,
+            "val_correct_rate": 0.4827795922756195,
+            "val_annual_profit": 0.9492669105529785,
+            "train_loss": 0.7922784686088562,
+            "train_correct_rate": 0.5001101493835449,
+            "train_annual_profit": 0.9961430430412292
+        },
+        "26": {
+            "val_loss": 0.47990691661834717,
+            "val_correct_rate": 0.4989870488643646,
+            "val_annual_profit": 1.00580632686615,
+            "train_loss": 0.620512843132019,
+            "train_correct_rate": 0.5084508061408997,
+            "train_annual_profit": 1.0081812143325806
+        },
+        "27": {
+            "val_loss": 0.7380123138427734,
+            "val_correct_rate": 0.5003038644790649,
+            "val_annual_profit": 1.0018326044082642,
+            "train_loss": 1.2712241411209106,
+            "train_correct_rate": 0.5023730397224426,
+            "train_annual_profit": 0.9891974925994873
+        },
+        "31": {
+            "val_loss": 1.495913028717041,
+            "val_correct_rate": 0.507192075252533,
+            "val_annual_profit": 0.9994198083877563,
+            "train_loss": 0.5204903483390808,
+            "train_correct_rate": 0.5091016292572021,
+            "train_annual_profit": 1.0030913352966309
+        },
+        "29": {
+            "val_loss": 0.5522621870040894,
+            "val_correct_rate": 0.5058752298355103,
+            "val_annual_profit": 1.0274666547775269,
+            "train_loss": 0.6234725117683411,
+            "train_correct_rate": 0.5096323490142822,
+            "train_annual_profit": 1.0143258571624756
+        },
+        "28": {
+            "val_loss": 0.4442060589790344,
+            "val_correct_rate": 0.4854132831096649,
+            "val_annual_profit": 0.95794677734375,
+            "train_loss": 0.6578457951545715,
+            "train_correct_rate": 0.5006608366966248,
+            "train_annual_profit": 0.9849650263786316
+        },
+        "30": {
+            "val_loss": 0.4714109003543854,
+            "val_correct_rate": 0.5077998638153076,
+            "val_annual_profit": 0.994001567363739,
+            "train_loss": 0.5728250741958618,
+            "train_correct_rate": 0.508801281452179,
+            "train_annual_profit": 1.000977873802185
+        },
+        "32": {
+            "val_loss": 0.9253072142601013,
+            "val_correct_rate": 0.4965559244155884,
+            "val_annual_profit": 0.9559179544448853,
+            "train_loss": 3.39512038230896,
+            "train_correct_rate": 0.5049864053726196,
+            "train_annual_profit": 1.0328067541122437
+        },
+        "33": {
+            "val_loss": 0.71429443359375,
+            "val_correct_rate": 0.5035454034805298,
+            "val_annual_profit": 1.0086344480514526,
+            "train_loss": 0.7245009541511536,
+            "train_correct_rate": 0.5128765106201172,
+            "train_annual_profit": 0.9910390973091125
+        },
+        "34": {
+            "val_loss": 0.6182273626327515,
+            "val_correct_rate": 0.5041531324386597,
+            "val_annual_profit": 1.0181044340133667,
+            "train_loss": 0.6081209182739258,
+            "train_correct_rate": 0.5099727511405945,
+            "train_annual_profit": 1.015982747077942
+        },
+        "36": {
+            "val_loss": 0.3919759690761566,
+            "val_correct_rate": 0.5010129809379578,
+            "val_annual_profit": 0.9937706589698792,
+            "train_loss": 1.2777204513549805,
+            "train_correct_rate": 0.5161105990409851,
+            "train_annual_profit": 1.0199368000030518
+        },
+        "37": {
+            "val_loss": 0.7215473651885986,
+            "val_correct_rate": 0.5036466717720032,
+            "val_annual_profit": 1.012484073638916,
+            "train_loss": 0.984694242477417,
+            "train_correct_rate": 0.5108438730239868,
+            "train_annual_profit": 1.0476047992706299
+        },
+        "38": {
+            "val_loss": 0.8515305519104004,
+            "val_correct_rate": 0.5135737657546997,
+            "val_annual_profit": 1.1109139919281006,
+            "train_loss": 2.55822491645813,
+            "train_correct_rate": 0.5080803632736206,
+            "train_annual_profit": 1.0674948692321777
+        },
+        "35": {
+            "val_loss": 0.6383582949638367,
+            "val_correct_rate": 0.48926255106925964,
+            "val_annual_profit": 0.9834243655204773,
+            "train_loss": 0.6381893157958984,
+            "train_correct_rate": 0.5013917684555054,
+            "train_annual_profit": 0.9829457998275757
+        },
+        "39": {
+            "val_loss": 0.5177643895149231,
+            "val_correct_rate": 0.4970623850822449,
+            "val_annual_profit": 0.973771333694458,
+            "train_loss": 0.7200124263763428,
+            "train_correct_rate": 0.5040552020072937,
+            "train_annual_profit": 0.9898850917816162
+        },
+        "40": {
+            "val_loss": 0.32322269678115845,
+            "val_correct_rate": 0.5044570565223694,
+            "val_annual_profit": 1.0005979537963867,
+            "train_loss": 0.6252368092536926,
+            "train_correct_rate": 0.5156600475311279,
+            "train_annual_profit": 1.0130207538604736
+        },
+        "41": {
+            "val_loss": 0.8038229942321777,
+            "val_correct_rate": 0.5033428072929382,
+            "val_annual_profit": 1.014063835144043,
+            "train_loss": 0.5863757729530334,
+            "train_correct_rate": 0.509512186050415,
+            "train_annual_profit": 1.0167056322097778
+        },
+        "43": {
+            "val_loss": 0.5590640306472778,
+            "val_correct_rate": 0.49311181902885437,
+            "val_annual_profit": 0.9620651006698608,
+            "train_loss": 0.9297536015510559,
+            "train_correct_rate": 0.49951937794685364,
+            "train_annual_profit": 0.979709804058075
+        },
+        "42": {
+            "val_loss": 0.7560737133026123,
+            "val_correct_rate": 0.5012155771255493,
+            "val_annual_profit": 0.9767003059387207,
+            "train_loss": 0.9154097437858582,
+            "train_correct_rate": 0.5081104040145874,
+            "train_annual_profit": 1.011152744293213
+        },
+        "44": {
+            "val_loss": 1.364351749420166,
+            "val_correct_rate": 0.49574553966522217,
+            "val_annual_profit": 1.0030736923217773,
+            "train_loss": 0.4506913721561432,
+            "train_correct_rate": 0.5050464868545532,
+            "train_annual_profit": 0.9867525100708008
+        },
+        "47": {
+            "val_loss": 0.5171992778778076,
+            "val_correct_rate": 0.5049635171890259,
+            "val_annual_profit": 1.0070384740829468,
+            "train_loss": 0.490723580121994,
+            "train_correct_rate": 0.5112744569778442,
+            "train_annual_profit": 1.0119609832763672
+        },
+        "45": {
+            "val_loss": 0.3296421468257904,
+            "val_correct_rate": 0.4970623850822449,
+            "val_annual_profit": 1.0375151634216309,
+            "train_loss": 0.5954200029373169,
+            "train_correct_rate": 0.5071491599082947,
+            "train_annual_profit": 1.0086110830307007
+        },
+        "46": {
+            "val_loss": 0.3692914843559265,
+            "val_correct_rate": 0.4924027621746063,
+            "val_annual_profit": 0.9911017417907715,
+            "train_loss": 0.7003265023231506,
+            "train_correct_rate": 0.5093319416046143,
+            "train_annual_profit": 1.0044820308685303
+        },
+        "48": {
+            "val_loss": 0.4485645890235901,
+            "val_correct_rate": 0.502532422542572,
+            "val_annual_profit": 1.0028520822525024,
+            "train_loss": 1.2866157293319702,
+            "train_correct_rate": 0.516070544719696,
+            "train_annual_profit": 1.0214699506759644
+        },
+        "49": {
+            "val_loss": 0.3851759433746338,
+            "val_correct_rate": 0.5008103847503662,
+            "val_annual_profit": 1.002781867980957,
+            "train_loss": 0.6468788385391235,
+            "train_correct_rate": 0.5131568312644958,
+            "train_annual_profit": 1.0049512386322021
+        }
+    }
+}

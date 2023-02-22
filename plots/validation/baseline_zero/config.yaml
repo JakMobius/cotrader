@@ -1,0 +1,234 @@
+device: cpu
+constants:
+  train_candles: 10000
+  validation_candles: 1000
+  interval: 5m
+  upper_date: '2025-05-31 00:00:00'
+  model_codename: baseline-zero-sl${model.sequence_length}
+validation:
+  suppress_output: true
+  available_candles: 450000
+  train_size: 20000
+  validation_size: 2000
+  steps: 50
+  seed: 42
+  nproc: 8
+data:
+  batch_size: 1024
+  sources:
+  - symbol: ETHUSDT
+    interval: ${constants.interval}
+    upper_date: ${constants.upper_date}
+  - symbol: BTCUSDT
+    interval: ${constants.interval}
+    upper_date: ${constants.upper_date}
+  - symbol: SOLUSDT
+    interval: ${constants.interval}
+    upper_date: ${constants.upper_date}
+  - symbol: XRPUSDT
+    interval: ${constants.interval}
+    upper_date: ${constants.upper_date}
+  - symbol: LTCUSDT
+    interval: ${constants.interval}
+    upper_date: ${constants.upper_date}
+  normalize_input_mean: false
+  normalize_output_mean: false
+  sequence_length: ${model.sequence_length}
+  indicators:
+  - ema10
+  - ema50
+  - ema100
+  - sma10
+  - sma50
+  - sma100
+  - volume100
+  input_features:
+  - type: softplus_ratio
+    num:
+    - open
+    - 0
+    den:
+    - open
+    - -1
+    factor: 200
+    name: rel(open)
+  - type: softplus_ratio
+    num:
+    - high
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    name: rel(high)
+  - type: softplus_ratio
+    num:
+    - low
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    name: rel(low)
+  - type: log_ratio
+    num:
+    - volume
+    - 0
+    den:
+    - volume
+    - -1
+    name: log(volume)
+  - type: log10fourier
+    value:
+    - open
+    - 0
+    name: abs(open)
+  - type: log10fourier
+    value:
+    - volume
+    - 0
+    name: abs(volume)
+  - type: log10fourier
+    value:
+    - volume100
+    - 0
+    name: abs(volume100)
+  - type: softplus_ratio
+    num:
+    - ema10
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    name: rel(ema10)
+  - type: softplus_ratio
+    num:
+    - ema50
+    - 0
+    den:
+    - open
+    - 0
+    factor: 100
+    name: rel(ema50)
+  - type: softplus_ratio
+    num:
+    - ema100
+    - 0
+    den:
+    - open
+    - 0
+    factor: 50
+    name: rel(ema100)
+  output_features:
+  - type: softplus_ratio
+    num:
+    - close
+    - 0
+    den:
+    - close
+    - -1
+    factor: 200
+    target: predicted_close
+    name: rel(close)
+  - type: log_ratio
+    num:
+    - volume
+    - 0
+    den:
+    - volume100
+    - -1
+    target: predicted_volume
+    name: log(volume)
+  - type: softplus_ratio
+    num:
+    - high
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    target: predicted_high
+    name: rel(high)
+  - type: softplus_ratio
+    num:
+    - low
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    target: predicted_low
+    name: rel(low)
+  prediction:
+  - type: value
+    value:
+    - close
+    - -1
+    target: open
+  - type: inv_log_ratio
+    ratio:
+    - predicted_volume
+    - 0
+    den:
+    - volume100
+    - -1
+    target: volume
+  - type: inv_softplus_ratio
+    ratio:
+    - predicted_close
+    - 0
+    den:
+    - close
+    - -1
+    factor: 200
+    target: close
+  - type: inv_softplus_ratio
+    ratio:
+    - predicted_high
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    target: high
+  - type: inv_softplus_ratio
+    ratio:
+    - predicted_low
+    - 0
+    den:
+    - open
+    - 0
+    factor: 200
+    target: low
+output:
+  experiment_id: 1
+  dir: ${constants.model_codename}-${output.experiment_id}
+  tensorboard_dir: plots/validation/${output.dir}
+  name: ''
+  histograms:
+  - file: loss_hist.png
+    metrics:
+    - train_loss
+    - val_loss
+    name: Loss distribution
+    xlabel: Loss
+    ylabel: Frequency
+  - file: profit.png
+    metrics:
+    - train_annual_profit
+    - val_annual_profit
+    name: Annual profit distribution
+    xlabel: Profit
+    ylabel: Frequency
+training:
+  epochs: 1
+  early_stopping_patience: -1
+  load_checkpoint: false
+  dataloader_workers: 0
+  gradient_clip_val: null
+  log_profit: true
+  loss_function: mse
+model:
+  _target_: cotrader.models.baseline_zero.BaselineZeroModel
+  sequence_length: 128
